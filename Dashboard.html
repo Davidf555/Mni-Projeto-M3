@@ -17,14 +17,13 @@
     <div class="containerMain">
         <div id="screen">
             <h2>Adicione as informações necessárias </h2>
-            <div id="add-card-screen">
+            <div class="card-screen">
 
                 <p><strong>Digite seu nome:</strong></p>
                 <input type="text" placeholder="Digite seu nome" id="inputNome">
 
                 <p><strong>Digite o tipo de cabelo:</strong></p>
                 <select class="option" name="tipoCabelo" id="inputTipoCabelo">
-                    <option class="option">Selecione o tipo de cabelo</option>
                     <option class="option" value="liso">Liso</option>
                     <option class="option" value="ondulado">Ondulado</option>
                     <option class="option" value="cacheado">Cacheado</option>
@@ -44,8 +43,14 @@
         <button id="bnt-view-products"><strong>Ver seus cabelos</strong></button>
     </div>
 
-    <div class="products" id="containerProducts">
+    <div class="linha"></div>
 
+    <div class="products">
+        <div class="productsContainer">
+            <ul id="listaUl">
+
+            </ul>
+        </div>
     </div>
 
     <script src="src/Dashboard.js"></script>
