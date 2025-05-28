@@ -5,12 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="shortcut icon" type="imagex/png" href="images/chave engrenagem.png">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="shortcut icon" type="imagex/png" href="images/Studio Bella.jpg">
+    <link rel="stylesheet" href="src/Dashboard.css">
 </head>
 
 <body>
+    <header>
+        <h1>Studio Bella</h1>
+    </header>
 
+    <div class="containerMain">
+        <div id="screen">
+            <h2>Adicione as informações necessárias </h2>
+            <div id="add-card-screen">
+
+                <p><strong>Digite seu nome:</strong></p>
+                <input type="text" placeholder="Digite seu nome" id="inputNome">
+
+                <p><strong>Digite o tipo de cabelo:</strong></p>
+                <select class="option" name="tipoCabelo" id="inputTipoCabelo">
+                    <option class="option">Selecione o tipo de cabelo</option>
+                    <option class="option" value="liso">Liso</option>
+                    <option class="option" value="ondulado">Ondulado</option>
+                    <option class="option" value="cacheado">Cacheado</option>
+                    <option class="option" value="crespo">Crespo</option>
+                </select>
+
+                <p><strong>Digite o tipo de procedimento:</strong></p>
+                <input type="text" placeholder="Digite o tipo de procedimento" id="inputProcedimento">
+
+                <br>
+                <button id="btn-add"><strong>Adicionar cabelo</strong></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-products">
+        <button id="bnt-view-products"><strong>Ver seus cabelos</strong></button>
+    </div>
+
+    <div class="products" id="containerProducts">
+
+    </div>
+
+    <script src="src/script.js"></script>
 </body>
 
 </html>
