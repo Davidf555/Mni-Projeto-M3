@@ -22,16 +22,23 @@
                 <p><strong>Digite seu nome:</strong></p>
                 <input type="text" placeholder="Digite seu nome" id="inputNome">
 
-                <p><strong>Digite o tipo de cabelo:</strong></p>
+                <p><strong>Selecione o tipo de cabelo:</strong></p>
                 <select class="option" name="tipoCabelo" id="inputTipoCabelo">
+                    <option value="">Selecione</option>
                     <option class="option" value="liso">Liso</option>
                     <option class="option" value="ondulado">Ondulado</option>
                     <option class="option" value="cacheado">Cacheado</option>
                     <option class="option" value="crespo">Crespo</option>
                 </select>
 
-                <p><strong>Digite o tipo de procedimento:</strong></p>
-                <input type="text" placeholder="Digite o tipo de procedimento" id="inputProcedimento">
+                <p><strong>Selecione o tipo de procedimento:</strong></p>
+                <select class="option" name="procedimento" id="inputProcedimento">
+                    <option value="">Selecione</option>
+                    <option class="option" value="Hidratação">Hidratação</option>
+                    <option class="option" value="Tintura">Tintura</option>
+                    <option class="option" value="Matização da cor">Matização da cor</option>
+                    <option class="option" value="Brilho">Brilho</option>
+                </select>
 
                 <br>
                 <button id="btn-add"><strong>Adicionar cabelo</strong></button>
@@ -45,12 +52,10 @@
 
     <div class="linha"></div>
 
-    <div class="products">
-        <div class="productsContainer">
-            <ul id="listaUl">
+    <div class="divProducts">
+        <ul id="listaUl">
 
-            </ul>
-        </div>
+        </ul>
     </div>
 
     <script src="src/Dashboard.js"></script>
