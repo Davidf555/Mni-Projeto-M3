@@ -6,15 +6,14 @@ function viewProducts() {
 }
 viewProducts();
 
+const listaCards = [];
+
 function card() {
     const inputNome = document.getElementById('inputNome');
     const inputProcedimento = document.getElementById('inputProcedimento');
     const inputTipoCabelo = document.getElementById('inputTipoCabelo');
     const addCard = document.getElementById('btn-add');
     const listaUl = document.getElementById('listaUl');
-
-    const listaCards = [];
-
 
     class Card {
         constructor(img, nome, procedimento, tipo) {
