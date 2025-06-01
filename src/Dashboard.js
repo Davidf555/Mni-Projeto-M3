@@ -6,15 +6,15 @@ function viewProducts() {
 }
 viewProducts();
 
-const listaCards = [];
+let listaCards = [];
+
+const inputNome = document.getElementById('inputNome');
+const inputProcedimento = document.getElementById('inputProcedimento');
+const inputTipoCabelo = document.getElementById('inputTipoCabelo');
+const addCard = document.getElementById('btn-add');
+const listaUl = document.getElementById('listaUl');
 
 function card() {
-    const inputNome = document.getElementById('inputNome');
-    const inputProcedimento = document.getElementById('inputProcedimento');
-    const inputTipoCabelo = document.getElementById('inputTipoCabelo');
-    const addCard = document.getElementById('btn-add');
-    const listaUl = document.getElementById('listaUl');
-
     class Card {
         constructor(img, nome, procedimento, tipo) {
             this.nome = nome;
@@ -78,26 +78,26 @@ function card() {
     //     }
     // }
 
-    const img2 = src = "images/cabelos/cabelo-ondulado.jpg";
+    const img2 = "images/cabelos/cabelo-ondulado.jpg";
 
     addCard.addEventListener('click', () => {
-        // if (inputNome.value === "" || inputProcedimento.value === "" || inputTipoCabelo.value === "") {
-        //     alert("Por favor preencha todos os campos");
-        // } else {
-        //     const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
-        //     card.criarCard();
-        //     listaCards.push(card);
+        if (inputNome.value === "" || inputProcedimento.value === "" || inputTipoCabelo.value === "") {
+            alert("Por favor preencha todos os campos");
+        } else {
+            const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
+            card.criarCard();
+            listaCards.push(card);
 
-        //     inputNome.value = "";
-        //     inputProcedimento.value = "";
-        //     inputTipoCabelo.value = "";
-        //     console.log(listaCards)
-        // }
+            inputNome.value = "";
+            inputProcedimento.value = "";
+            inputTipoCabelo.value = "";
+            console.log(listaCards)
+        }
 
-        const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
-        card.criarCard();
-        listaCards.push(card);
-        console.log(listaCards)
+        // const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
+        // card.criarCard();
+        // listaCards.push(card);
+        // console.log(listaCards);
     });
 }
 card();
