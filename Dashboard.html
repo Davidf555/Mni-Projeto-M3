@@ -5,12 +5,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="shortcut icon" type="imagex/png" href="images/chave engrenagem.png">
-    <link rel="stylesheet" href="src/style.css">
+    <link rel="shortcut icon" type="imagex/png" href="images/Studio Bella.png">
+    <link rel="stylesheet" href="src/Dashboard.css">
 </head>
 
 <body>
+    <header>
+        <h1>Studio Bella</h1>
+    </header>
 
+    <div class="containerMain">
+        <div id="screen">
+            <h2>Adicione as informações necessárias </h2>
+            <div class="card-screen">
+
+                <p><strong>Digite seu nome:</strong></p>
+                <input type="text" placeholder="Digite seu nome" id="inputNome">
+
+                <p><strong>Selecione o tipo de cabelo:</strong></p>
+                <select class="option" name="tipoCabelo" id="inputTipoCabelo">
+                    <option value="">Selecione</option>
+                    <option class="option" value="liso">Liso</option>
+                    <option class="option" value="ondulado">Ondulado</option>
+                    <option class="option" value="cacheado">Cacheado</option>
+                    <option class="option" value="crespo">Crespo</option>
+                </select>
+
+                <p><strong>Selecione o tipo de procedimento:</strong></p>
+                <select class="option" name="procedimento" id="inputProcedimento">
+                    <option value="">Selecione</option>
+                    <option class="option" value="Hidratação">Hidratação</option>
+                    <option class="option" value="Tintura">Tintura</option>
+                    <option class="option" value="Matização da cor">Matização da cor</option>
+                    <option class="option" value="Brilho">Brilho</option>
+                </select>
+
+                <br>
+                <button id="btn-add"><strong>Adicionar cabelo</strong></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="view-products">
+        <button id="bnt-view-products"><strong>Ver seus cabelos</strong></button>
+    </div>
+
+    <div class="linha"></div>
+
+    <div class="divProducts">
+        <ul id="listaUl">
+
+        </ul>
+    </div>
+
+    <script src="src/Dashboard.js"></script>
 </body>
 
 </html>
