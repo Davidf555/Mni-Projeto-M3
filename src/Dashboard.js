@@ -49,8 +49,27 @@ function card() {
                 listaCards.splice(index, 1);
                 renderCards();
                 console.log(listaCards)
+                salvarNoLocalStorage();
             };
 
+            const btnAlterar = document.createElement("button");
+            btnAlterar.innerText = "Alterar";
+            btnAlterar.onclick = () => {
+                const novoNome = prompt("Altere o nome:", this.nome);
+                const novoProcedimento = prompt("Altere o procedimento: Hidratação, Tintura, Matização da cor ou Brilho", this.procedimento);
+                const novoTipo = prompt("Altere o tipo de cabelo: Liso, Ondulado, Cacheado ou Crespo", this.tipo);
+
+                if (novoNome !== null && novoProcedimento !== null && novoTipo !== null) {
+                    this.nome = novoNome;
+                    this.procedimento = novoProcedimento;
+                    this.tipo = novoTipo;
+
+                    salvarNoLocalStorage();
+                    renderCards();
+                }
+            };
+
+            divCard.appendChild(btnAlterar);
             divCard.appendChild(btnExcluir);
         }
     }
@@ -62,22 +81,6 @@ function card() {
         });
     };
 
-    // const imgCard = () => {
-    //     const tipo = inputTipoCabelo.value.trim();
-
-    //     if (tipo === "Liso") {
-    //         return "images/cabelos/Cabelo-liso.jpeg";
-    //     } else if (tipo === "Cacheado") {
-    //         return "images/cabelos/Cabelo-cacheado.jpg";
-    //     } else if (tipo === "Crespo") {
-    //         return "images/cabelos/cabelo-crespo.jpg";
-    //     } else if (tipo === "Ondulado") {
-    //         return "images/cabelos/cabelo-ondulado.jpg";
-    //     } else {
-    //         alert("Tipo de cabelo não reconhecido.");
-    //     }
-    // }
-
     const img2 = "images/cabelos/cabelo-ondulado.jpg";
 
     addCard.addEventListener('click', () => {
@@ -85,8 +88,9 @@ function card() {
             alert("Por favor preencha todos os campos");
         } else {
             const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
-            card.criarCard();
             listaCards.push(card);
+            salvarNoLocalStorage();
+            renderCards();
 
             inputNome.value = "";
             inputProcedimento.value = "";
@@ -94,10 +98,14 @@ function card() {
             console.log(listaCards)
         }
 
-        // const card = new Card(img2, inputNome.value, inputProcedimento.value, inputTipoCabelo.value);
-        // card.criarCard();
-        // listaCards.push(card);
-        // console.log(listaCards);
     });
 }
 card();
+
+function salvarNoLocalStorage() {
+    localStorage.setItem("cards", JSON.stringify(listaCards));
+}
+
+// window.addEventListener('beforeunload', () => {
+//     localStorage.clear();
+// });
