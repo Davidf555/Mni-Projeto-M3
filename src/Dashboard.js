@@ -47,17 +47,16 @@ function card() {
             btnExcluir.innerText = "Excluir";
             btnExcluir.onclick = () => {
                 listaCards.splice(index, 1);
-                renderCards();
-                console.log(listaCards)
                 salvarNoLocalStorage();
+                renderCards();
             };
 
             const btnAlterar = document.createElement("button");
             btnAlterar.innerText = "Alterar";
             btnAlterar.onclick = () => {
                 const novoNome = prompt("Altere o nome:", this.nome);
-                const novoProcedimento = prompt("Altere o procedimento: Hidratação, Tintura, Matização da cor ou Brilho", this.procedimento);
-                const novoTipo = prompt("Altere o tipo de cabelo: Liso, Ondulado, Cacheado ou Crespo", this.tipo);
+                const novoProcedimento = prompt("Altere o procedimento:", this.procedimento);
+                const novoTipo = prompt("Altere o tipo de cabelo:", this.tipo);
 
                 if (novoNome !== null && novoProcedimento !== null && novoTipo !== null) {
                     this.nome = novoNome;
@@ -95,10 +94,14 @@ function card() {
             inputNome.value = "";
             inputProcedimento.value = "";
             inputTipoCabelo.value = "";
-            console.log(listaCards)
         }
-
     });
+
+    const dadosSalvos = JSON.parse(localStorage.getItem("cards"));
+    if (dadosSalvos) {
+        listaCards = dadosSalvos.map(obj => new Card(obj.img, obj.nome, obj.procedimento, obj.tipo));
+        renderCards();
+    }
 }
 card();
 
@@ -106,6 +109,3 @@ function salvarNoLocalStorage() {
     localStorage.setItem("cards", JSON.stringify(listaCards));
 }
 
-// window.addEventListener('beforeunload', () => {
-//     localStorage.clear();
-// });
